@@ -1,14 +1,16 @@
-chrome.tabs.onActivated.addListener(activeInfo => move(activeInfo));
+//listening the event
+chrome.tabs.onMoved.addListener((tabId) => move(tabId));
 chrome.windows.getCurrent((window) => console.log(window.id));
 
-async function move(activeInfo) {
+//moving the tab to another chrome window
+async function move(tabId) {
   try {
-      await chrome.tabs.move(activeInfo.tabId, {index: 0});
+      await chrome.tabs.move(tabId, {index: -1, windowId: 1});
       console.log('Success.');
     } 
     catch (error) {
     if (error == 'Error: Tabs cannot be edited right now (user may be dragging a tab).') {
-      setTimeout(() => move(activeInfo), 50);
+      setTimeout(() => move(tabId), 50);
       console.log("error happend");
     }
   }
