@@ -3,7 +3,17 @@
     "description": "Moving tabs with a shortcut.",
     "version": "0.1",
     "manifest_version": 3,
+    "permissions": [
+      "tabs"
+    ],
     "background": {
         "service_worker": "background.js"
+    },
+    "commands": {
+      "move": {
+        "suggested_key": "Alt+M",
+        "description": "to move the current tab"
       }
+      
+    } 
 }
