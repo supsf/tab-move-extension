@@ -1,7 +1,7 @@
 {
     "name": "tab-move",
     "description": "Moving tabs with a shortcut.",
-    "version": "0.1",
+    "version": "0.8",
     "manifest_version": 3,
     "permissions": [
       "tabs"
