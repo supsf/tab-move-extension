@@ -37,15 +37,8 @@ function after_command() {
 
 //moving the tab to another chrome window
 function move(tabId, last_window_id) {
-  try {
     chrome.tabs.move(tabId, {index: -1, windowId: last_window_id});
     console.log('Success.');
-  }
-  catch (error) {
-    if (error == 'Error in event handler: TypeError: Error in invocation of tabs.move([integer|array] tabIds, object moveProperties, optional function callback): No matching signature.') {
-      chrome.tabs.move(tabId, {index: -1, windowId: last_window_id});
-    }
-  }
 }
 
 //moving the tab to another chrome window (older version)
