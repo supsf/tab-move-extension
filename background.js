@@ -1,11 +1,10 @@
 //Getting the last focused window to move the tab in it
-var tab_id;
 var current_window_id;
 var last_window_id;
 
 //Keep the last chrome windowId to move the tab in it
-chrome.windows.onFocusChanged.addListener(function(windowId){
-  if (windowId != -1){
+chrome.windows.onFocusChanged.addListener(function(windowId) {
+  if (windowId != -1) {
     last_window_id = current_window_id;
     current_window_id = windowId;
   }
@@ -15,8 +14,7 @@ chrome.windows.onFocusChanged.addListener(function(windowId){
 chrome.commands.onCommand.addListener((command) => {
   if (command == "move") {
     chrome.tabs.query({active: true, currentWindow: true}, function(tab){
-      tab_id = tab[0].id;
-      move(tab_id, last_window_id);
+      move(tab[0].id, last_window_id);
     });
   }
 });
