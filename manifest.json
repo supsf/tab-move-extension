@@ -1,6 +1,16 @@
 {
     "name": "tab-move",
     "description": "Moving tabs with a shortcut.",
-    "version": "0.1",
-    "manifest_version": 3
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+      "move": {
+        "suggested_key": "Alt+M",
+        "description": "Move Tab"
+      }
+      
+    } 
 }
