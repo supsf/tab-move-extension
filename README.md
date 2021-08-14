@@ -4,7 +4,10 @@ This chrome extension is making it possible the move the Chrome tab to another C
 
 When you want to move you tab to the last active chrome window you just need to pres Alt+M and its done for you.
 
+To install the extension on your chrome, download the repository into a file and upload the file by clicking Load upacked button from this menu chrome://extensions/ 
+
 You can adjust the shortcut as you like from the shortcuts menu of this panel chrome://extensions/shortcuts.
+
 
 
 Furkan Gündel.
