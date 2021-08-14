@@ -21,19 +21,21 @@ chrome.windows.onFocusChanged.addListener(function(windowId){
 //listening the shortcut
 chrome.commands.onCommand.addListener((command) => {
   if (command == "move") {
-    if(current_window_id == -1 && last_window_id_keeper != -1) {
+    if (current_window_id == -1 && last_window_id_keeper != -1) {
       last_window_id = last_window_id_keeper;
     }
-    move(tab_id, last_window_id);
-    console.log(last_window_id_keeper + " last keeper (c)");
-    console.log(last_window_id + " last (c)");
-    console.log(current_window_id + " current (c)");
+    chrome.tabs.query({active: true, currentWindow: true}, function(tab){
+      tab_id = tab[0].id;
+      move(tab_id, last_window_id);
+      console.log(last_window_id_keeper + " last keeper (c)");
+      console.log(last_window_id + " last (c)");
+      console.log(current_window_id + " current (c)");
+    });
   }
 });
 
 //moving the tab to another chrome window (eğer async yapmak istersen async ve await ekle)
 function move(tabId, last_window_id) {
-    chrome.tabs.query({active: true, currentWindow: true}, (tab) => tab_id = tab[0].id);
     chrome.tabs.move(tabId, {index: -1, windowId: last_window_id});
     console.log('Success.');
 }
