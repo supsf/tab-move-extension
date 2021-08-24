@@ -20,8 +20,8 @@ chrome.commands.onCommand.addListener((command) => {
 });
 
 //Moving the tab to another chrome window
-function move(tabId, last_window_id) {
-    chrome.tabs.move(tabId, {index: -1, windowId: last_window_id});
+function move(tabId, lastWindoowId) {
+    chrome.tabs.move(tabId, {index: -1, windowId: lastWindoowId});
     //Focuses to the tab you move
     chrome.tabs.update(tabId, {active: true});
     console.log('Success.');
