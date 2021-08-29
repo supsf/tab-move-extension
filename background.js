@@ -4,7 +4,7 @@ var last_window_id;
 
 //Keep the last chrome windowId to move the tab in it
 chrome.windows.onFocusChanged.addListener(function(windowId) {
-  if (windowId != -1) {
+  if (!(windowId == -1 || windowId == current_window_id)) {
     last_window_id = current_window_id;
     current_window_id = windowId;
   }
