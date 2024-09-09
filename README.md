@@ -1,5 +1,7 @@
 # tab-move-extension
 
+https://chromewebstore.google.com/detail/tab-move-to-side-screen/eniblinanabobmaigjnenpajhhcccmgp
+
 This chrome extension is making it possible the move the Chrome tab to another Chrome window just with an adjustable shortcut. (comes handy if you use two seperate Chrome windows with two monitors)
 
 When you want to move you tab to the last active chrome window you just need to press Alt+M and it is done for you.
